@@ -171,12 +171,21 @@ const StudentOnboarding = () => {
         });
       }
 
+      const eduPayload = formData.education.map((ed) => ({
+        college_name: ed.college_name,
+        university_name: ed.university_name,
+        course_name: ed.course_name,
+        start_year: ed.start_year ? Number(ed.start_year) : undefined,
+        end_year: ed.end_year ? Number(ed.end_year) : undefined,
+        gpa: ed.gpa,
+      }));
+
       const payload = {
         firstName: formData.firstName,
         lastName: formData.lastName,
         mobile: formData.mobile,
         about: formData.about,
-        education: formData.education,
+        education: eduPayload,
         certifications: certPayload,
         skills,
       };

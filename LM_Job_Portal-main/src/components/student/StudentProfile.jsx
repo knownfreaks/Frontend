@@ -195,8 +195,8 @@ const StudentProfile = () => {
         college_name: ed.college_name,
         university_name: ed.university_name,
         course_name: ed.course_name,
-        start_year: ed.start_year,
-        end_year: ed.end_year,
+        start_year: ed.start_year ? Number(ed.start_year) : undefined,
+        end_year: ed.end_year ? Number(ed.end_year) : undefined,
         gpa: ed.gpa,
       }));
 
